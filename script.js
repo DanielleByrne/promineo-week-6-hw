@@ -17,7 +17,7 @@ class Deck {
   // deckOfCards - array of the instances of Card class
   // method to take a turn and method to shuffle
   constructor(cardDeck) {
-    this.cardDeck = cardDeck; // will be the array
+    this.cardDeck = []; 
   }
 
   createDeck() {
