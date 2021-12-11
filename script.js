@@ -56,7 +56,7 @@ class Deck {
         deck.cardDeck.push(newCard);
       }
     }
-    console.log(deck);
+    // console.log(deck);
   }
 }
 
