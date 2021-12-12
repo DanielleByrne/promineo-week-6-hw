@@ -39,7 +39,7 @@ class Deck {
       "Q",
       "A",
     ];
-    let rank = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
     // nested for loop, will go in order and make a card for each one, will make all spade + value combinations then all club + value combinations ect..
     for (let i = 0; i < suits.length; i++) {
@@ -53,7 +53,6 @@ class Deck {
     }
   }
   shuffle() {
-    // splice
     const copy = this.cardDeck.slice();
     const temp = [];
     while (copy.length > 0) {
@@ -74,28 +73,41 @@ class Player {
   deal(cards) {
     this.hand = cards;
   }
-  // one half of the deck
-  // hand property and a method for a turn
 }
 
 let deck = new Deck();
 deck.createDeck();
 deck.shuffle();
-console.log(deck.cardDeck);
 
-const sally = new Player("Sally");
-const steve = new Player("Steve");
+const playerOne = new Player("Sally");
+const playerTwo = new Player("Steve");
 
-sally.deal(deck.cardDeck.slice(0, deck.cardDeck.length / 2));
-steve.deal(deck.cardDeck.slice(deck.cardDeck.length / 2, deck.cardDeck.length));
+// each person get's one half of the deck ∏
+playerOne.deal(deck.cardDeck.slice(0, deck.cardDeck.length / 2));
+playerTwo.deal(
+  deck.cardDeck.slice(deck.cardDeck.length / 2, deck.cardDeck.length)
+);
 
-console.log(sally.hand);
+playGame(playerOne, playerTwo);
 
-// player.score +=1
-// player.hand.pop() -- removes the last element and returns , pops out card to compare and then update score loop, alert final score
-// playGame(playerOne, playerTwo){
-//loop- pops cards
-//compare cards
-//update score
-//compare scores between two and show the higher one if/else
-//}
+function playGame(playerOne, playerTwo) {
+  for (let k = 0; k < 26; k++) {
+    let playerOneCard = playerOne.hand.pop().rank;
+    let playerTwoCard = playerTwo.hand.pop().rank;
+
+    if (playerOneCard > playerTwoCard) {
+      playerOne.score += 1;
+      console.log(
+        `${playerOne.name} gets a point! Their score is ${playerOne.score}`
+      );
+    } else if (playerTwoCard > playerOneCard) {
+      playerTwo.score += 1;
+      console.log(
+        `${playerTwo.name} gets a point! Their score is ${playerTwo.score}`
+      );
+    } else if (playerOneCard === playerTwoCard) {
+      console.log(`A tie results in both players losing the game! `);
+      return;
+    }
+  }
+}
