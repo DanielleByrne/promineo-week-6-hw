@@ -1,0 +1,24 @@
+{
+  "name": "promineo-week-6-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielleByrne/promineo-week-6-hw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielleByrne/promineo-week-6-hw/issues"
+  },
+  "homepage": "https://github.com/DanielleByrne/promineo-week-6-hw#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
+  }
+}

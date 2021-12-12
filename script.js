@@ -108,6 +108,8 @@ function playGame(playerOne, playerTwo) {
     } else if (playerOneCard === playerTwoCard) {
       console.log(`A tie results in both players losing the game! `);
       return;
+    } else {
+      throw new Error("something went wrong with player cards");
     }
   }
 }
