@@ -15,30 +15,13 @@ class Card {
 }
 
 class Deck {
-  // deckOfCards - array of the instances of Card class
-  // method to take a turn and method to shuffle
-  //shuffle then make new arrays for each player
   constructor(cardDeck) {
     this.cardDeck = [];
   }
 
   createDeck() {
     let suits = ["diamond", "club", "heart", "spade"];
-    let value = [
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "J",
-      "K",
-      "Q",
-      "A",
-    ];
+    let value = ["2","3", "4", "5", "6","7", "8", "9", "10", "J", "K", "Q", "A",];
     let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
     // nested for loop, will go in order and make a card for each one, will make all spade + value combinations then all club + value combinations ect..
